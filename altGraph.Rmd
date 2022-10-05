@@ -1,0 +1,20 @@
+---
+title: Testing for alt text in ggplot
+output:
+    html_document
+---
+
+``` {r, setup, echo=FALSE}
+library(knitr)
+library(ggplot2)
+```
+
+
+``` {r, makePlot, results="asis", echo=FALSE, fig.alt=get_alt_text(p1)}
+p1 <- ggplot(Loblolly, aes(x = age, y = height)) +
+    geom_point(na.rm=TRUE) +
+    labs(alt = "Scatter plot of tree height and age, X axis is age from 3 to 25 [need to find out units], y axis is height from 3.46 to 64.10 [need to find out units]. Guessing they get taller with age.")
+
+p1
+
+```
