@@ -1,6 +1,6 @@
 ---
-title: Writing Meaningful Alt-TExts for Data Visualizations in R" "
-subtitle: "R Ladies New York"
+title: "Writing Meaningful Alt Texts for Data Visualizations in R" 
+subtitle: "R Ladies NYC"
 authors: "Liz Hare, PhD"
 institute: ""
 date: "October 10, 2022"
@@ -21,7 +21,7 @@ output:
 library(metathis)
 meta() %>%  
   meta_general(
-    description = "Writing Meaningful Alt-Texts for Data Visualizations in R",
+    description = "Writing Meaningful Alt Texts for Data Visualizations in R",
     generator = "xaringan and remark.js"
   ) %>% 
   # GitHub repo housing the slides for the talk
@@ -128,6 +128,7 @@ background-size: 200px
 
 # `r rmarkdown::metadata$title`
 #### `r rmarkdown::metadata$subtitle`
+### `r rmarkdown::metadata$date`
 ### `r rmarkdown::metadata$author`<br>@DogGeneticsLLC `r fa("twitter", a11y="sem")`
 
 ---
@@ -159,15 +160,15 @@ width="250px"
 # Today's Topics
 
 - What is alt text?
-- Including alt text in R markdown documents
 - Two Frameworks for thinking about writing alt text
 - Example
+- Including alt text in R markdown documents
 - Questions/Practice alt texts
 
 
 ---
 
-# Alt-text: What It Is
+# Alt text: What It Is
 
 - Attached to images to provide a description for people who use screen reading software.
 - Required to adhere to accessibility laws
@@ -176,21 +177,22 @@ width="250px"
 There are blind, low vision, and neurodivergent people in the general population, 
 and there are blind members of the data analysis community,
 even though we have not been visible.
+
 ---
 
-# Alt-text: What It Does
+# Alt text: What It Does
 
 Answers "Why was this image included?"
 
 Examples: 
-- It shows the relationship between X and Y in a graph  
-- It shows COVID-19 incidences on a map
+- It describes the relationship between X and Y in a graph  
+- It describes COVID-19 incidences on a map
 - It compares four groups on outcome measures in faceted bar charts
 
 ---
 
 
-# Alt-Text: What It Isn't
+# Alt Text: What It Isn't
 
 - **Automatically generated** by AI or text mining
 - The title
@@ -207,17 +209,17 @@ Humor is allowed, but it shouldn't obscure the message conveyed by the image
 ]
 ---
 
-# Where is alt-text?
-
+# Where is Alt Text?
 
 Started in [HTML code](https://en.wikipedia.org/wiki/Alt_attribute).  
 
 Now appears in places like:  
 - [MS Office](https://support.microsoft.com/en-us/office/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669)
 - PDFs created with Office
-- [PDFs created with Adobe Acrobat](https://csuf.screenstepslive.com/s/12867/m/96806/l/1474315-alt-text-for-images-in-adobe-acrobat-pdf)
+- [PDFs created with Adobe Acrobat](https://csuf.screenstepslive.com/s/12867/m/96806/l/1474315-alt text-for-images-in-adobe-acrobat-pdf)
 - [Twitter posts](https://help.twitter.com/en/using-twitter/picture-descriptions)  
-- [Facebook posts](https://www.perkinselearning.org/technology/blog/how-add-alt-text-facebook-page)  
+    - New! [Get Twitter to remind you when you forget alt text]()
+- [Facebook posts](https://www.perkinselearning.org/technology/blog/how-add-alt text-facebook-page)  
 - R markdown [documents](https://bookdown.org/yihui/rmarkdown/) and [slides](https://hugo-academic--silvia.netlify.app/2021-03-16-deploying-xaringan-slides/)
 
 .footnote[
@@ -226,11 +228,11 @@ Follow links for instructions
 
 ---
 
-# Missing Alt-Text Infrastructure?  
+# Missing Alt Text Infrastructure?  
 
 
 .pull-left[
-Places without alt-text infrastructure  
+Places without alt text infrastructure  
 
 - academic journals
 - books
@@ -241,59 +243,58 @@ Places without alt-text infrastructure
 .pull-right[
 Workarounds  
 
-- Provide descriptions in text, e.g. describe graphed relationship in Results section of a paper.
-- Provide text descriptions of images as supplementary material when submitting to an academic journal.
-- Use replies or comments in social media if you've forgotten alt-text
+- Provide descriptions in text, e.g. describe graphed relationship in Results section of a paper
+- Provide text descriptions of images as supplementary material when submitting to an academic journal
+- Use replies or comments in social media if you've forgotten alt text
 - Provide tables and/or raw data for data visualizations
 ]
 
 ---
 
-# Alt-Text: How Long Is It?
+# Alt Text: How Long Is It?
 
 *It depends!*  
 - context  
 - complexity  
 
-Use your judgemnt even though
-- Some media have character limits for alt-text
+Use your judgement even though
+- Some media have character limits for alt text
 - Too many guidelines emphasize brevity
 - One or two sentences won't be enough for many data visualizations
 
 ---
 
-# Alt-Text For Data Visualization: Ingredients Model
+# Alt Text For Data Visualization: Ingredients Model
 
+.pull-left[
 Ingredients (answer these questions):
 1. What kind of visualization is it (line graph, scatter plot, bar chart...?)
 2. What variables are on the axes?
 3. What is the range of the data?
 4. What relationship between variables does the data visualization show?
+]
 
-Opinion: Don't waste my time with 1-3 if you aren't going to include 4. While some automatic
-alt-text processes mine some of this information (e.g. R's ggplot2), I don't want to spend time with the metadata if I can't find out what the graph says.
+.pull-right[
+**Opinion:** Don't waste my time with 1-3 if you aren't going to include 4. While some automatic
+alt text processes mine some of this information, I don't want to spend time building a mental model of the graph if I can't find out what the graph *says*.
+]
 
 .footnote[Ingredients identified in this collaboration:  
 Canelón S, Hare E. (2021) Revealing room for improvement in accessibility within a social media data visualization learning community. csvConf2021 https://github.com/spcanelon/csvConf2021  
 ]
 
-# Alt-Text for Data Visualization: MIT Visualization Grou 4-Levels Model
+---
+
+# Alt Text for Data Visualization: MIT Visualization Group 4-Levels Model
 
 1. Elements and encoded properties  
-
-*title, axes and axis labels, data points*  
-
+    - *title, axes and axis labels, data points*  
 2. Statistical and relation information  
-
-*mean, standard deviation, minimum, maximum*  
-
+    - *mean, standard deviation, minimum, maximum*  
 3. Perceptual and cognitive phenomena  
-
-* "y increases linearly with x," "males spend less time in all behaviors than females for all faceted behaviors," "The following states have high incidences: ... "*
-
+   - * "y increases linearly with x," "males spend less time in all behaviors than females for all faceted behaviors," "The following states have high incidences: ... "*
 4. Contextual and domain-specific insights  
-
-*"the change in x at this time point was caused by <something not in the data visualization at all>", "the change in incidence was large"*
+    - *"the change in x at this time point was caused by <something not in the data visualization at all>", "the change in incidence was large"*
 
 
 
@@ -309,11 +310,11 @@ Examples:
 minimum, maximum, slope
 
 
-Tip: don't put URLs in alt text; there is no way for a screen reader to activate them
+Tip: don't put URLs in alt text unless they are very simple; there is no way for a screen reader to activate them
 
 ---
 
-# Data Visualization Example 1
+## Data Visualization Example 1
 
 Dr. Sheffield covering all the ingredients!   
 
@@ -336,7 +337,7 @@ Each of the major mass extinctions are marked (5). 0 is marked as an extinction 
 
 ---
 
-# Data Visualization Example 1 Graph
+## Data Visualization Example Graph
 
 ```{r, diversityTime, fig.alt="A graph marking diversity through time. X axis: geologic time. y axis: number of marine families. The x asix spans from the Ediacaran to the Tertiary with the periods marked. Eons marked below. The Cambrian phase is marked, ending in Cambrian. Paleozoic phase stretches from Ordovician to Permian. Mesozoic- Cenozoic phase stretches from Triassic to Tertiary. Diversity starts low- first big jump occuurs in Cambrian but a larger one occurs during Ordovician. The highest point in the Paleozoic reaches in Ordovician and stays there, except for the 2 major extinctions marked. At the Permian- Triassic, there is a large decrease, and it increases steadily to the end of the graph, except for extinction events.  Each of the major mass extinctions are marked (5). 0 is marked as an extinction of Ediacaran biota (but there is no decrease in diversity- this is hypothesized, but not clear what occured). 1: extinction at end of Ordovician. 2: Devonian extinction. 3: Permian extinction. 4: Triassic. 5: Cretaceous.", out.width="50%"}
 knitr::include_graphics("img/diversityThroughTime.jpg")
@@ -370,7 +371,8 @@ Lundgard A, Satyanarayan A. Accessible Visualization via Natural Language Descri
 
 # Alt Text in R Markdown
 
-`fig.alt`is the chunk option that holds your alt textlude one graphic per chunk
+`fig.alt` is the chunk option that holds your alt text.  
+Include one graphic per chunk
 
 ```` 
 ``` {r, altCodeChunk, echo=TRUE, fig.alt = "My Alt Text"}`r ''`
@@ -379,19 +381,20 @@ include_graphics("img/ben2.jpg")
 ```
 ````
 
-You can see examples of including alt text for [these very slides](https:lizharedogs.github.com)
+You can see examples of`.Rmd` code for  including alt text for [these very slides](https:lizharedogs.github.com)
+
 
 ---
 
 
-# {ggplot2} `alt` and `get_alt_text`
+# {ggplot2} Label `alt` 
 
 You can also specify alt text for a `ggplot`
-using the `labs(alt = <alt-text>)` option.  
+using the `labs(alt = <your-alt text>)` option.  
 
 
 ```` 
-``` {r, plot, echo=TRUE, fig.alt=get_alt_text(p1)}}`r ''`
+``` {r, plotTrees, echo=TRUE, eval=TRUE, fig.alt=get_alt_text(p1)}}`r ''`
 library(knitr)
 library(ggplot2)
 
@@ -399,19 +402,19 @@ p1 <- ggplot(Loblolly, aes(x = age, y = height)) +
     geom_point(na.rm=TRUE) +
     labs(alt = "Scatter plot of tree height and age, X axis is age from 3 to 25 [need to find out units], y axis is height from 3.46 to 64.10 [need to find out units]. Guessing they get taller with age.")
 
-p1
+save(p1, file="p1.Rda")
 ```
 ````
 
 ---
 
-# Retrieve your `ggplot` alt text
+# Retrieve your {ggplot} Alt Text
 
 
 `get_alt_text(p1)`
 
 ``` {r, gemmaLemmons, fig.alt = "A fuzzy Golden retriever stands in an inside doorway, looking attentively at the photographer.", out.width="20%"}
-include_graphics("img/gem.jpg")
+include_graphics("img/gem.png")
 ```
 
 
@@ -422,17 +425,55 @@ include_graphics("img/gem.jpg")
 If using a publishing system where alt text isn't available, 
 use `get_alt_text()` to pull it into the main text of your document.
 
-.pull-left[
-Rmd code:  
+
+`.Rmd` code:  
+blah blah blah `` `r
+load("p1.Rda"); get_alt_text(p1)` `` blah blah blah  
+
+Rendered version:    
+blah blah blah `r load("p1.Rda"); get_alt_text(p1)` blah blah blah
 
 
-`` blah blah blah `r get_alt_text(p1)` blah blah blah ``
-]
 
-.pull-left[
-Rendered version:  
+---
 
-blah blah blah `r get_alt_text(p1)` blah blah blah
-]
+# 'ggplot2::get_alt_text() Caution
+
+The object you're getting the alt text from has to be available in the same
+chunk or inline R code where you call `get_alt_text`
+
+---
+
+# Clunkiness
+
+- Impossible to write alt text without seeing the data visualization first
+
+- `.Rmd` needs to be edited to include alt text
+
+---
+
+# Side Note: Providing Your Graphed Data in a File
+
+The [{ggdatasaver)](https://github.com/eliocamp/ggdatasaver) package 
+saves the data that generated a `ggplot`'
+
+Useful when:
+- Journals don't have infrastructure to include alt text (include as supplementary files)
+- Your students will need to explore the data more fully
+- You need to preserve confidentiality of data summarized in your plot
+
+For plot `p1`:
+
+`save_plot_data(p1, file="p1data.zip")`
+
+---
+
+
+# Questions?
+
+#### Thank you!
+- [R-Ladies NYC](https://www.rladiesnyc.org), for the invitation
+- [Sarah Sheffield](https://sarahlsheffield.wordpress.com), for the alt text example	
+- [Silvia Canelón](https://silviacanelon.com), for the [Xaringan](https://github.com/yihui/xaringan) template
 
 ---
