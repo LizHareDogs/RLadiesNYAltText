@@ -126,10 +126,10 @@ background-size: 200px
 
 <!-- this slide has the Dog Genetics, LLC logo in the top right corner, added using the "background" image classes above. The text begins on the bottom left corner of the slide -->
 
-# `r rmarkdown::metadata$title`
+## `r rmarkdown::metadata$title`
 #### `r rmarkdown::metadata$subtitle`
-### `r rmarkdown::metadata$date`
-### `r rmarkdown::metadata$author`<br>@DogGeneticsLLC `r fa("twitter", a11y="sem")`
+#### `r rmarkdown::metadata$date`
+#### `r rmarkdown::metadata$author`<br>@DogGeneticsLLC `r fa("twitter", a11y="sem")`
 
 ---
 class: middle, center
@@ -368,6 +368,12 @@ Lundgard A, Satyanarayan A. Accessible Visualization via Natural Language Descri
 
 ---
 
+class: middle, center
+
+#R!
+
+
+---
 
 # Alt Text in R Markdown
 
@@ -418,7 +424,6 @@ save(p1, file="p1.Rda")
 include_graphics("img/gem.png")
 ```
 
-
 ---
 
 
@@ -428,25 +433,14 @@ As a workaround when publications don't support alt-text,
 you can use `get_alt_text()` to
 
 - Use it as descriptive text inside your report
-- Create a separate document to contain all alt texts for a supplementary file
+- Create a separate document to contain all alt texts for a supplementary file  
 
-* Make sure your ggplot object is available when you `get_alt_text()`
-
+*Make sure your ggplot object is available* when you `get_alt_text()`
 - save the object in the chunk where you create it
 - load it in the inline code like  
 
 `load("p1.Rda"); get_alt_text(p1)`
 
-
-
-
-
----
-
-# Caution for using 'ggplot2::get_alt_text()'
-
-The object you're getting the alt text from has to be available in the same
-chunk or inline R code where you call `get_alt_text`
 
 ---
 
@@ -477,9 +471,20 @@ For plot `p1`:
 
 # Questions?
 
+.pull-left[
 #### Thank you!
 - [R-Ladies NYC](https://www.rladiesnyc.org), for the invitation
 - [Sarah Sheffield](https://sarahlsheffield.wordpress.com), for the alt text example	
 - [Silvia Canelón](https://silviacanelon.com), for the [Xaringan](https://github.com/yihui/xaringan) template
+]
 
----
+
+.pull-right[
+Liz Hare PhD
+
+[`r fa("link", a11y="sem")` doggenetics.com](http://doggenetics.com/)<br>
+[`r fa("twitter", a11y="sem")` @DogGeneticsLLC](https://twitter.com/DogGeneticsLLC)<br>
+[`r fa("github", a11y="sem")` @LizHareDogs](https://github.com/LizHareDogs)<br>
+[`r fa("envelope", a11y="sem")` LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
+
+]
