@@ -381,7 +381,8 @@ include_graphics("img/ben2.jpg")
 ```
 ````
 
-You can see examples of`.Rmd` code for  including alt text for [these very slides](https:lizharedogs.github.com)
+You can see examples of`.Rmd` code for  including alt text for [these very slides](https://LizHareDogs.github.io/RLadiesNYAltText).
+
 
 
 ---
@@ -420,24 +421,29 @@ include_graphics("img/gem.png")
 
 ---
 
+
 # Include Alt Text in Your Markdown Report
 
-If using a publishing system where alt text isn't available, 
-use `get_alt_text()` to pull it into the main text of your document.
+As a workaround when publications don't support alt-text,
+you can use `get_alt_text()` to
+
+- Use it as descriptive text inside your report
+- Create a separate document to contain all alt texts for a supplementary file
+
+* Make sure your ggplot object is available when you `get_alt_text()`
+
+- save the object in the chunk where you create it
+- load it in the inline code like  
+
+`load("p1.Rda"); get_alt_text(p1)`
 
 
-`.Rmd` code:  
-blah blah blah `` `r
-load("p1.Rda"); get_alt_text(p1)` `` blah blah blah  
-
-Rendered version:    
-blah blah blah `r load("p1.Rda"); get_alt_text(p1)` blah blah blah
 
 
 
 ---
 
-# 'ggplot2::get_alt_text() Caution
+# Caution for using 'ggplot2::get_alt_text()'
 
 The object you're getting the alt text from has to be available in the same
 chunk or inline R code where you call `get_alt_text`
